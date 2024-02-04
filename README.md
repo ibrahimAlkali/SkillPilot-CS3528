@@ -26,6 +26,7 @@ Instuctions below will instruct how i set up my django project. Before making yo
      path('hello/', views.say_hello)]```. This will specify paths that will connect a URL pattern to a specific path of view. In our case it states when a user visits the URL path '/hello/' the view function 'say_hello' from the 'views' module should handle the request, which we set up before.
 5. Templates
    - A template is a reusable html file that allows us to display dynamic       data. It is the conding language that i will be using to construct the       front-end of the website
-   - Create a folder in the application folder called templates. In the templates folder create a file called hello.html.
- 
-
+   - Create a folder in the application folder called templates. In the          templates folder create a file called hello.html, IForm.html and             SForm.html.
+   - hello.html will be the main page, IForm.html will be the internship          form for employers and SForm will be for the students.
+6. Static
+   -
