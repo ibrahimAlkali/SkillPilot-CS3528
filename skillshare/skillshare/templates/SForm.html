@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/skillshare/static/css/styles.css" />
+    <title>Student Internship Form</title>
+  </head>
+  <body class="SFORM">
+    <div class="form2" style="overflow-y: scroll">
+      <header>Student Internship Application</header>
+      <form>
+        <div class="fields2">
+          <div class="input">
+            <label for="FirstN">1. First Name<span>*</span></label>
+            <input
+              type="text"
+              id="FirstN"
+              pattern="[A-Za-z]+"
+              placeholder="Enter your answer"
+              required
+            />
+            <br /><br />
+            <label for="LastN">2. Last Name<span>*</span></label>
+            <input
+              type="text"
+              id="LastN"
+              pattern="[A-Za-z]+"
+              placeholder="Enter your answer"
+              required
+            />
+            <br /><br />
+            <label for="StudID">3. Student ID<span>*</span></label>
+            <input
+              type="number"
+              id="StudID"
+              oninput="javascript: if (this.value.length > 8) this.value = this.value.slice(0, 8);"
+              placeholder="Enter your answer"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="degrees">4. Degree Classification<span>*</span></label>
+            <div class="degC">
+              <select name="degrees" id="degrees" required>
+                <option value="q1">Master in Public Health (MPH)</option>
+                <option value="q2">MPH Online</option>
+                <option value="q3">MSc Applied Health Sciences</option>
+              </select>
+            </div>
+          </div>
+          <br />
+
+          <p>5. Mode of study<span>*</span></p>
+
+          <input
+            type="radio"
+            name="ModeS"
+            value="Mode1"
+            id="option-1"
+            placeholder="Enter your answer"
+            required
+          />
+          <label for="option-1">Face to Face</label>
+
+          <input
+            type="radio"
+            name="ModeS"
+            value="Mode2"
+            id="option-2"
+            placeholder="Enter your answer"
+            required
+          />
+          <label for="option-2">Online</label>
+
+          <br /><br />
+
+          <p>6. Pattern of Study<span>*</span></p>
+
+          <input
+            type="radio"
+            name="PatternS"
+            value="Patter1"
+            id="num1"
+            placeholder="Enter your answer"
+            required
+          />
+          <label for="num1">Full Time</label>
+
+          <input
+            type="radio"
+            name="PatternS"
+            value="Pattern2"
+            id="num2"
+            placeholder="Enter your answer"
+            required
+          />
+          <label for="num2">Part Time</label>
+
+          <br /><br />
+
+          <label for="UG">7. Degree details<span>*</span></label
+          ><br />
+          <textarea
+            name="UG"
+            id="UG"
+            cols="30"
+            rows="10"
+            placeholder="Enter your answer"
+            required
+          ></textarea>
+
+          <br /><br />
+
+          <label for="CA">8. What are your career aspirations?</label><br />
+          <textarea
+            name="CA"
+            id="CA"
+            cols="30"
+            rows="10"
+            placeholder="Enter your answer"
+          ></textarea>
+
+          <br /><br />
+
+          <label for="Achieve"
+            >9. What would you like to achieve through taking this
+            course?</label
+          ><br />
+          <textarea
+            name="Achieve"
+            id="Achieve"
+            cols="30"
+            rows="10"
+            placeholder="Enter your answer"
+          ></textarea>
+
+          <br /><br />
+          <div class="submit2">
+            <input type="submit" value="Complete application" id="submit2" />
+          </div>
+          <br />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
