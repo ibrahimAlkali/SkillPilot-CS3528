@@ -1,14 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/skillshare/static/css/styles.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>University of Aberdeen Placement</title>
   </head>
   <body class="page1">
     <header>
       <h1>University of Aberdeen</h1>
       <img
-        src="/skillshare/static/images/unilogo.png"
+        class="smallimg"
+        src="{% static 'images/unilogo.png' %}"
         alt="University of Aberdeen logo "
       />
     </header>
@@ -22,8 +24,8 @@
       </div>
       <ul>
         <div class="Content">
-          <li><a href="IForm.html">Employer application</a></li>
-          <li><a href="SForm.html">Student application</a></li>
+          <li><a href="{% url 'iform' %}">Employer application</a></li>
+          <li><a href="{% url 'sform' %}">Student application</a></li>
           <li><a href="">Contacts</a></li>
         </div>
       </ul>

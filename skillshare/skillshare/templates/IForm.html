@@ -1,7 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/skillshare/static/css/styles.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     <title>Student Internship Form</title>
   </head>
   <body class="IFORM">
@@ -29,6 +31,7 @@
             <input
               type="text"
               id="FirstN2"
+              pattern="[A-Za-z]+"
               placeholder="Enter your answer"
               required
             />
@@ -37,6 +40,7 @@
             <input
               type="text"
               id="LastN2"
+              pattern="[A-Za-z]+"
               placeholder="Enter your answer"
               required
             />
