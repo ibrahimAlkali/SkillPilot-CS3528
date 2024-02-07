@@ -1,148 +1,90 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="{% static '/css/styles.css'%}" />
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     <title>Student Internship Form</title>
-  </head>
-  <body class="SFORM">
-    <div class="form2" style="overflow-y: scroll">
-      <header>Student Internship Application</header>
-      <form>
-        <div class="fields2">
-          <div class="input">
-            <label for="FirstN">1. First Name<span>*</span></label>
-            <input
-              type="text"
-              id="FirstN"
-              pattern="[A-Za-z]+"
-              placeholder="Enter your answer"
-              required
-            />
-            <br /><br />
-            <label for="LastN">2. Last Name<span>*</span></label>
-            <input
-              type="text"
-              id="LastN"
-              pattern="[A-Za-z]+"
-              placeholder="Enter your answer"
-              required
-            />
-            <br /><br />
-            <label for="StudID">3. Student ID<span>*</span></label>
-            <input
-              type="number"
-              id="StudID"
-              oninput="javascript: if (this.value.length > 8) this.value = this.value.slice(0, 8);"
-              placeholder="Enter your answer"
-              required
-            />
-          </div>
-          <br />
-          <div>
-            <label for="degrees">4. Degree Classification<span>*</span></label>
-            <div class="degC">
-              <select name="degrees" id="degrees" required>
-                <option value="q1">Master in Public Health (MPH)</option>
-                <option value="q2">MPH Online</option>
-                <option value="q3">MSc Applied Health Sciences</option>
-              </select>
-            </div>
-          </div>
-          <br />
+</head>
+<body class="SFORM">
+<div class="form1" style="overflow-y: scroll">
+    <div class="top">
+        <header class="form1H">
+            University of Aberdeen: Work-based Placements/Learning in Applied Health Sciences 2024
+        </header>
 
-          <p>5. Mode of study<span>*</span></p>
-
-          <input
-            type="radio"
-            name="ModeS"
-            value="Mode1"
-            id="option-1"
-            placeholder="Enter your answer"
-            required
-          />
-          <label for="option-1">Face to Face</label>
-
-          <input
-            type="radio"
-            name="ModeS"
-            value="Mode2"
-            id="option-2"
-            placeholder="Enter your answer"
-            required
-          />
-          <label for="option-2">Online</label>
-
-          <br /><br />
-
-          <p>6. Pattern of Study<span>*</span></p>
-
-          <input
-            type="radio"
-            name="PatternS"
-            value="Patter1"
-            id="num1"
-            placeholder="Enter your answer"
-            required
-          />
-          <label for="num1">Full Time</label>
-
-          <input
-            type="radio"
-            name="PatternS"
-            value="Pattern2"
-            id="num2"
-            placeholder="Enter your answer"
-            required
-          />
-          <label for="num2">Part Time</label>
-
-          <br /><br />
-
-          <label for="UG">7. Degree details<span>*</span></label
-          ><br />
-          <textarea
-            name="UG"
-            id="UG"
-            cols="30"
-            rows="10"
-            placeholder="Enter your answer"
-            required
-          ></textarea>
-
-          <br /><br />
-
-          <label for="CA">8. What are your career aspirations?</label><br />
-          <textarea
-            name="CA"
-            id="CA"
-            cols="30"
-            rows="10"
-            placeholder="Enter your answer"
-          ></textarea>
-
-          <br /><br />
-
-          <label for="Achieve"
-            >9. What would you like to achieve through taking this
-            course?</label
-          ><br />
-          <textarea
-            name="Achieve"
-            id="Achieve"
-            cols="30"
-            rows="10"
-            placeholder="Enter your answer"
-          ></textarea>
-
-          <br /><br />
-          <div class="submit2">
-            <input type="submit" value="Complete application" id="submit2" />
-          </div>
-          <br />
-        </div>
-      </form>
+        <p>
+            The survey will take approximately 9 minutes to complete. Many thanks for your interest in hosting a
+            Work-based Placement or Work-Based Learning Experience for our Masters students in 2024. Please complete the
+            form below for each placement opportunity to enable us to take plans forward and identify student matches.
+            Thank you in advance and we look forward to supporting your organisation.
+        </p>
     </div>
-  </body>
+
+    <form method="post" action="{% url 'submit_student' %}">
+        {% csrf_token %}
+        <div class="fields">
+            <div class="input">
+                <label for="Fullname">1. Fullname<span>*</span></label>
+                <input
+                        type="text"
+                        name="Fullname"
+                        id="Fullname"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+                <label for="Course">2. Course<span>*</span></label>
+                <input
+                        type="text"
+                        name="Course"
+                        id="Course"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+                <label for="Score">3. Score<span>*</span></label>
+                <input
+                        type="number"
+                        name="Score"
+                        id="Score"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+                <label for="Experience">4. Experience<span>*</span></label>
+                <input
+                        type="text"
+                        name="Experience"
+                        id="Experience"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+                <label for="StudyMode">5. Study Mode<span>*</span></label>
+                <input
+                        type="text"
+                        name="StudyMode"
+                        id="StudyMode"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+                <label for="StudyPattern">6. Study Pattern<span>*</span></label>
+                <input
+                        type="text"
+                        name="StudyPattern"
+                        id="StudyPattern"
+                        placeholder="Enter your answer"
+                        required
+                />
+                <br/><br/>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Complete application" id="submit"/>
+                <br>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
 </html>
