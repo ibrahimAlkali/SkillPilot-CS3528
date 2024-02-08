@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static '/css/styles.css'%}" />
+    <title>Student Internship Form</title>
+  </head>
+  <body class="IFORM">
+    <div class="form2" style="overflow-y: scroll">
+      <header>Student Internship Application</header>
+      <form method="post" action="{% url 'submit-internship' %}">
+        {% csrf_token %}
+        <div class="fields2">
+          <div class="input">
+            <label for="Title">Title<span>*</span></label>
+            <input
+              type="text"
+              name="Title"
+              id="Title"
+              placeholder="Enter title"
+              required
+            />
+            <br /><br />
+            <label for="Company">Company<span>*</span></label>
+            <input
+              type="text"
+              name="Company"
+              id="Company"
+              placeholder="Enter company"
+              required
+            />
+            <br /><br />
+            <label for="Field">Field<span>*</span></label>
+            <input
+              type="text"
+              name="Field"
+              id="Field"
+              placeholder="Enter field"
+              required
+            />
+            <br /><br />
+            <label for="MinScore">Minimum Score<span>*</span></label>
+            <input
+              type="number"
+              name="MinScore"
+              id="MinScore"
+              placeholder="Enter minimum score"
+              required
+            />
+            <br /><br />
+            <label for="Positions">Positions<span>*</span></label>
+            <input
+              type="number"
+              name="Positions"
+              id="Positions"
+              placeholder="Enter positions"
+              required
+            />
+            <br /><br />
+          </div>
+          <div class="submit2">
+            <input type="submit" value="Complete application" id="submit2" />
+          </div>
+          <br />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
