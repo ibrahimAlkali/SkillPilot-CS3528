@@ -24,10 +24,10 @@
       </div>
       <ul>
         <div class="Content">
-          <li><a href="{% url 'iform' %}">Employer application</a></li>
-          <li><a href="{% url 'sform' %}">Student application</a></li>
+          <li><a href="{% url 'internship' %}">Employer application</a></li>
+          <li><a href="{% url 'student' %}">Student application</a></li>
           <li><a href="">Contacts</a></li>
-          <form method="post" action="{% url 'clean_data' %}">
+          <form method="post" action="{% url 'clean-data' %}">
             {% csrf_token %}
             <button type="submit">Process Data</button>
         </form>

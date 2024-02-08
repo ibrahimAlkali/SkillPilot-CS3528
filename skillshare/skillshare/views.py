@@ -7,18 +7,16 @@ import csv
 import os
 
 # View for hello.html
-def say_hello(request):
-    return render(request, 'hello.html')
+def homepage(request):
+    return render(request, 'homepage.html')
 
 # View for IForm.html
-def iform(request):
-    return render(request, 'IForm.html')
+def internship(request):
+    return render(request, 'internship.html')
 
 # View for SForm.html
-def sform(request):
-    return render(request, 'SForm.html')
-
-
+def student(request):
+    return render(request, 'student.html')
 
 def clean_data(request):
     if request.method == 'POST':
@@ -48,7 +46,7 @@ def submit_student(request):
 
         csv_content = f"{fullname},{course},{score},{experience},{study_mode},{study_pattern}\n"
 
-        file_path = '/home/shaun/SkillPilot/Ibr/DjangoSkeleton/skillshare/data/candidates.csv'
+        file_path = 'data/candidates.csv'
 
         with open(file_path, 'a') as file:
             if os.path.getsize(file_path) == 0:
@@ -62,7 +60,7 @@ def submit_student(request):
 
 
 #Function to get user input and populate the jobs csv in the data folder
-def submit_job(request):
+def submit_internship(request):
     if request.method == 'POST':
         title = request.POST.get('Title', '')
         company = request.POST.get('Company', '')
@@ -72,7 +70,7 @@ def submit_job(request):
 
         csv_content = f"{title},{company},{field},{min_score},{positions}\n"
 
-        file_path = '/home/shaun/SkillPilot/Ibr/DjangoSkeleton/skillshare/data/jobs.csv'
+        file_path = 'data/jobs.csv'
 
         with open(file_path, 'a') as file:
             if os.path.getsize(file_path) == 0:
@@ -81,5 +79,5 @@ def submit_job(request):
 
         return HttpResponse('Form submitted')
     else:
-     
+        # TODO : change this to a 404 template!
         return render(request, 'your_template.html')
