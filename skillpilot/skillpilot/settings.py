@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'skillpilot',
+    'core',
 
 ]
 
@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'storefront.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -55,7 +55,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'storefront.wsgi.application'
+WSGI_APPLICATION = 'skillpilot.wsgi.application'
 
 
 # Database

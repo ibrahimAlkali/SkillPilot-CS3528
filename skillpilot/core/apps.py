@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SkillpilotConfig(AppConfig):
+class CoreAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'skillpilot'
+    name = 'core'
