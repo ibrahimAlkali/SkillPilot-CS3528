@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SkillshareConfig(AppConfig):
+class SkillpilotConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'skillshare'
+    name = 'skillpilot'
