@@ -17,8 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
+      # matrix-build - run the same build using the matrix strategy for python version 3.7
       matrix: 
-        python-version: [ 3.7, 3.8, 3.9 ]
+        python-version: [ 3.9 ]
 
     steps:
       - name: Fetch repository code
@@ -38,7 +39,7 @@ jobs:
     steps:
       - name: Run Tests
         run: |
-          python manage.py test
+          python skillpilot/manage.py test
 
   # deploy application 
   deploy:
