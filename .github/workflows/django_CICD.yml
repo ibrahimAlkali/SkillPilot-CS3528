@@ -1,14 +1,7 @@
 name: Django CI
 
 # define workflow triggers and events 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches: 
-      - main
+on: [ push, pull_request, workflow_dispatch ]
 
 jobs:
 
@@ -33,15 +26,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # linting is automatic checking of source code
+      - name: Lint with flake8 
+        run: |
+          pip install flake8
+          flake8
+
   # run application tests
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Run Tests
+      - name: Coverage report
         run: |
-          cd ..
-          python manage.py test
+          pip install coverage
+          coverage run manage.py test
+          coverage report
+      - name: Django testing
+        run: |
+          python3 manage.py test
 
   # deploy application 
   deploy:
