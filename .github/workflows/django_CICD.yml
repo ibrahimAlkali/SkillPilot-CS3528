@@ -33,8 +33,7 @@ jobs:
     steps:
       - name: Django testing
         run: |
-          echo ${{ github.workspace }}
-          python manage.py test
+          python C:/Users/matti/OneDrive/Desktop/SkillPilot-CS3528/skillpilot/manage.py test
 
   # deploy application 
   deploy:
