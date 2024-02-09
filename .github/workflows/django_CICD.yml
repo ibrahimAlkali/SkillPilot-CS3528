@@ -31,6 +31,7 @@ jobs:
       - name: Django testing
         run: |
           python manage.py test
+        working-directory: SkillPilot-CS3528
 
   # deploy application 
   deploy:
