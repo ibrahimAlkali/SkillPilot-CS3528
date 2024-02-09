@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Run Tests
         run: |
-          python skillpilot/manage.py test
+          python ../manage.py test
 
   # deploy application 
   deploy:
