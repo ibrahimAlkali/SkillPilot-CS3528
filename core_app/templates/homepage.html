@@ -27,13 +27,16 @@
           <li><a href="{% url 'internship' %}">Employer application</a></li>
           <li><a href="{% url 'student' %}">Student application</a></li>
           <li><a href="">Contacts</a></li>
-          <form method="post" action="{% url 'clean-data' %}">
-            {% csrf_token %}
-            <button type="submit">Process Data</button>
-        </form>
-        
+          {% csrf_token %}
+          <li><a href="{% url 'clean-data' %}">Process data</a></li>
         </div>
       </ul>
     </nav>
+    <ul>
+      <div class="admin">
+        <h2>Admin Login</h2>
+        <li><a href="{% url 'admin' %}">Login</a></li>
+      </div>
+    </ul>
   </body>
 </html>

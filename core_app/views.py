@@ -18,6 +18,10 @@ def internship(request):
 def student(request):
     return render(request, 'student.html')
 
+# View for admin.html
+def admin(request):
+    return render(request, 'admin.html')
+
 def clean_data(request):
     if request.method == 'POST':
         # Call the data processing function
